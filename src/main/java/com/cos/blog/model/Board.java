@@ -14,6 +14,15 @@ import javax.persistence.ManyToOne;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder // 빌더패턴
 @Entity
 public class Board {
 
@@ -30,9 +39,10 @@ public class Board {
 	@ColumnDefault("0")
 	private int count; // 조회수
 
-	@ManyToOne // Many=Board, User = One
+	@ManyToOne // Many=Board, User = One 연관관계
 	@JoinColumn(name = "userId")
-	private User userId; // DB는 오브젝트를 저장할 수 없음. FK, 자바는 오브젝트를 저장할 수 있음, ORM을 사용하면 오브젝트를 저장 가능
+	private User userId; // DB는 오브젝트를 저장할 수 없음. FK(foreign key), 자바는 오브젝트를 저장할 수 있음, ORM을 사용하면 오브젝트를 저장
+							// 가능
 
 	@CreationTimestamp
 	private Timestamp createDate;
