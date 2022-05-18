@@ -1,6 +1,6 @@
 package com.cos.blog.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.ColumnDefault;
-//import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 //ORM -> JAVA(또는 다른 언어) Object - > 테이블로 매핑해주는 기술
 
@@ -33,8 +32,7 @@ public class User {
 	@ColumnDefault(" 'user' ")
 	private String role; // Enum을 쓰는게 좋음 //admin, 일반user, manager //Enum으로 설정하면 도메인(어떤범위)를 정해서 입력하도록
 
-//	@CreationTimestamp // 시간을 자동 입력
-	@CreatedDate
+	@CreationTimestamp
 	private Timestamp createDate;
 
 }
