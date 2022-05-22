@@ -11,4 +11,10 @@ public class BoardController {
 		// /WEB-INF/views/index.jsp
 		return "index";
 	}
+
+	@GetMapping("/board/saveform")
+	public String saveForm() {
+		// /WEB-INF/views/index.jsp
+		return "board/saveForm";
+	}
 }
