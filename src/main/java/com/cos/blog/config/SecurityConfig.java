@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	// 같은 해쉬로 암호화해서 DB에 있는 해쉬랑 비교할 수 있음
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		System.out.println("test: " + auth.userDetailsService(principalDetailService));
+		// System.out.println("test: " + auth.userDetailsService(principalDetailService));
 		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 	}
 
