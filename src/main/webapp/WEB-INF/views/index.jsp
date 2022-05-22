@@ -2,33 +2,15 @@
 
 <%@ include file="layout/header.jsp"%>
 <div class="container">
+<c:forEach var="board" items="${boards }">
 	<div class="card m-2" style="width: 100%">
 		<div class="card-body">
-			<h4 class="card-title">제 목</h4>
-			<!-- 
-			<p class="card-text">내용.</p>
-			 -->
+			<h4 class="card-title">${board.title}</h4>
 			<a href="#" class="btn btn-primary">상세보기 </a>
 		</div>
 	</div>
-	<div class="card m-2" style="width: 100%">
-		<div class="card-body">
-			<h4 class="card-title">제 목</h4>
-			<!-- 
-			<p class="card-text">내용.</p>
-			 -->
-			<a href="#" class="btn btn-primary">상세보기 </a>
-		</div>
-	</div>
-	<div class="card m-2" style="width: 100%">
-		<div class="card-body">
-			<h4 class="card-title">제 목</h4>
-			<!-- 
-			<p class="card-text">내용.</p>
-			 -->
-			<a href="#" class="btn btn-primary">상세보기 </a>
-		</div>
-	</div>
+</c:forEach>
+
 </div>
 
 <%@ include file="layout/footer.jsp"%>
