@@ -36,9 +36,9 @@ public class BoardApiController {
 	
 	@PutMapping("api/board/{id}")
 	public ResponseDto<Integer> update(@PathVariable int id, @RequestBody Board board) {
-		System.out.println("BoardApiController: upadate: id: " + id);
-		System.out.println("BoardApiController: upadate: board: " + board.getTitle());
-		System.out.println("BoardApiController: upadate: board: " + board.getContent());
+//		System.out.println("BoardApiController: upadate: id: " + id);
+//		System.out.println("BoardApiController: upadate: board: " + board.getTitle());
+//		System.out.println("BoardApiController: upadate: board: " + board.getContent());
 		boardService.글수정하기(id, board);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 		
