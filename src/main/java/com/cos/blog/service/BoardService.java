@@ -64,20 +64,10 @@ public class BoardService {
 	
 	@Transactional
 	public void 댓글쓰기(ReplySaveRequestDto replySaveRequestDto) {
-		System.out.println("11111111");
-		User user = userRepository.findById(replySaveRequestDto.getUserId()).orElseThrow(() -> {
-			return new IllegalArgumentException("댓글 쓰기 실패: 작성자 아이디를 찾을 수 없습니다.");
-		});
-		System.out.println("22222222");
-		Board board = boardRepository.findById(replySaveRequestDto.getBoardId()).orElseThrow(() -> {
-			return new IllegalArgumentException("댓글 쓰기 실패: 게시글 아이디를 찾을 수 없습니다.");
-		});
-		
-		//Reply reply = Reply.builder().user(user).board(board).content(replySaveRequestDto.getContent()).build();
-		Reply reply = new Reply();
-		reply.update(user, board, replySaveRequestDto.getContent());
+		int result = replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
 
-		replyRepository.save(reply);
+		System.out.println("BoardService: "+result);
+
 	}
 }
 
